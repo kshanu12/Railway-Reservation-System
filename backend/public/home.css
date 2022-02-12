@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body{
+    background-image: url("./background.jpg");
+    background-size: cover;
+    background-color: rgb(15, 15, 111);
+}
+
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+
+.container{
+    width:80%;
+    height:100vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 14px;
+    margin:auto;
+}
+
+#header{
+    display:flex;
+    justify-content: space-around;
+}
+
+.h{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.h h1{
+    color: rgb(21, 21, 98);
+    font-size: 80px;
+    letter-spacing: -10px;
+    font-family: 'Varela Round',sans-serif;
+    border-radius: 100px;
+}
+
+#up-nav{
+    text-align: center;
+    display: flex;
+    justify-content: ;
+}
+
+.low-nav{
+    background-color: rgb(21, 21, 98);
+    color: white;
+    width:98%;
+    margin:auto;
+    border-radius: 5px;
+    height: 35px;
+    font-size: 25px;
+}
+
+#low-nav{
+    display: flex;
+    justify-content: space-around;
+    list-style-type:none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: bold;
+}
+
+#login{
+    margin-top: 20px;
+    width:100%;
+    padding:10px;
+    background-color:lightblue;
+    border-radius:10px;
+}

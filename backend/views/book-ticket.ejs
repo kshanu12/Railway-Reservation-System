@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.88.1">
+        <title>Carousel Template · Bootstrap v5.1</title>
+        <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+        }
+        </style>
+        <link href="./carousel.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height:13vh">
+                <div class="container-fluid">
+                    <img style="height:70px;padding-left:20px;border-radius: 50%;" src="/logo.jpg">
+                    <a style="padding-left: 130px;position:absolute;font-size: 30px;" class="navbar-brand" href="/">RNS RAILWAYS</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div style="padding-left: 300px;font-size: 20px;" class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/home1">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/find-train1">Find Train</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/Reservation1">Reservation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+								<form action="/book-history" method="post">
+									<button type="submit" style="border-radius: 5px;padding: 0;border: none;background: none;color:rgb(160, 160, 160);" id="book">Booking</button>
+								</form>
+							</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <span style="font-size: 20px;color: aliceblue;" class=""><a href="/profile" style="color: aliceblue;text-decoration: none;" onmouseover="this.style.color='lightblue';" onmouseout="this.style.color='aliceblue';">Welcome, <%=name%></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <button class="btn btn-outline-success" type="submit"><a href="/" style="color: green;text-decoration: none;">Log out</a></button>
+                    </form>
+                </div>
+                </div>
+            </nav>
+		</div>
+        <div style="margin:auto; margin-top: 130px;height:18vh;width:80%;background-color: #d6d3d3; border-radius: 20px;text-align: center;">
+            <div style="padding-top: 30px;">
+                <nav style="height:60px;background-color: rgb(14, 13, 13);width:98%;margin:auto;border-radius: 5px;font-size:larger;">
+                    <ul class="row" style="list-style-type: none;display:flex;justify-content: space-between;color: white;">
+                        <li class="col-1">Train number</li>
+                        <li class="col-1">Train name</li>
+                        <li class="col-1">Source Station</li>
+                        <li class="col-1">Destination Station</li>
+                        <li class="col-1">Arrival Time</li>
+                        <li class="col-1">Departure Time</li>
+                        <li class="col-1">Seats available</li>
+                        <li class="col-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cost</li>
+                    </ul>
+                    
+                    <ul class="row" style="list-style-type: none; display:flex;justify-content: space-around;">
+                        <li class="col-1"><%=t_no%></li>
+                        <li class="col-1"><%=t_name%></li>
+                        <li class="col-1"><%=fromstn%></li>
+                        <li class="col-1"><%=tostn%></li>
+                        <li class="col-1">&nbsp; <%=arrival%></li>
+                        <li class="col-1">&nbsp;&nbsp; <%=departure%></li>
+                        <li class="col-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=seat_avail%></li>
+                        <li class="col-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=cost%></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <form action="/book-ticket" method="post">
+            <div style="margin:auto; margin-top: 20px;height:55vh;width:80%;background-color: #d6d3d3; border-radius: 20px;text-align: center;">
+                <span style="padding-top: 20px;margin-right:40vhpadding-bottom: 20px;font-size:42px;font-weight: 600;">Passenger Details</span>
+                    <nav style="height:30px;background-color: rgb(14, 13, 13);width:98%;margin:auto;border-radius: 5px;font-size:larger;">
+                    <ul class="row" style="list-style-type: none;display:flex;justify-content: space-between;color: white;">
+                        <li class="col-3">Sl. No.</li>
+                        <li class="col-3">Name</li>
+                        <li class="col-3">Age</li>
+                        <li class="col-3">Gender</li>
+                    </ul>
+                    <ul class="row" style="list-style-type: none;display:flex;justify-content: space-between;">
+                        <li class="col-3">1.</li>
+                        <li class="col-3"><input type="text" name="name1" style="border-radius: 5px;" ></li>
+                        <li class="col-3"><input type="number" name="age1" style="border-radius: 5px;"  min="1" max="99"></li>
+                        <li class="col-3">
+                            <select class="te" name="gender1" id="gender1" style="border-radius: 5px;">
+                                <option value="Select Gender" disabled selected="selected">&nbsp;&nbsp;Gender&nbsp;&nbsp;</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="row" style="list-style-type: none;display:flex;justify-content: space-between;">
+                        <li class="col-3">2.</li>
+                        <li class="col-3"><input type="text" name="name2" style="border-radius: 5px;"></li>
+                        <li class="col-3"><input type="number" name="age2" style="border-radius: 5px;" min="1" max="99"></li>
+                        <li class="col-3">
+                            <select class="te" name="gender2" id="gender2" style="border-radius: 5px;">
+                                <option value="Select Gender" disabled selected="selected">&nbsp;&nbsp;Gender&nbsp;&nbsp;</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="row" style="list-style-type: none;display:flex;justify-content: space-between;">
+                        <li class="col-3">3.</li>
+                        <li class="col-3"><input type="text" name="name3" style="border-radius: 5px;"></li>
+                        <li class="col-3"><input type="number" name="age3" style="border-radius: 5px;" min="1" max="99"></li>
+                        <li class="col-3">
+                            <select class="te" name="gender3" id="gender3" style="border-radius: 5px;">
+                                <option value="Select Gender" disabled selected="selected">&nbsp;&nbsp;Gender&nbsp;&nbsp;</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="row" style="list-style-type: none;display:flex;justify-content: space-between;">
+                        <li class="col-3">4.</li>
+                        <li class="col-3"><input type="text" name="name4" style="border-radius: 5px;"></li>
+                        <li class="col-3"><input type="number" name="age4" style="border-radius: 5px;"  min="1" max="99"></li>
+                        <li class="col-3">
+                            <select class="te" name="gender4" id="gender4" style="border-radius: 5px;">
+                                <option value="Select Gender" disabled selected="selected">&nbsp;&nbsp;Gender&nbsp;&nbsp;</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="row" style="list-style-type: none;display:flex;justify-content: space-between;">
+                        <li class="col-3">5.</li>
+                        <li class="col-3"><input type="text" name="name5" style="border-radius: 5px;"></li>
+                        <li class="col-3"><input type="number" name="age5" style="border-radius: 5px;"  min="1" max="99"></li>
+                        <li class="col-3">
+                            <select name="gender5" id="gender5" style="border-radius: 5px;">
+                                <option value="Select Gender" disabled selected="selected">&nbsp;&nbsp;Gender&nbsp;&nbsp;</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul style="margin-top: 5vh;">
+                        <button type="submit" style="border-radius:5px;background-color:#bad7da"> &nbsp;&nbsp; Book Ticket &nbsp;&nbsp;</button>
+                    </ul>
+                </nav>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
